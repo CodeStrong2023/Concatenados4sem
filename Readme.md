@@ -2,27 +2,29 @@
 
 # ScrumMasters:
 
--Semana 1: Yvet
+-Semana 1: Franco
 
--Semana 2: Gaston
+-Semana 2: Yvet
 
--Semana 3: Sofía
+-Semana 3: Gaston
 
--Semana 4: Franco
+-Semana 4: Sofía
 
--Semana 5: Yvet
+-Semana 5: Franco
 
--Semana 6: Gaston
+-Semana 6: Yvet
 
--Semana 7: Sofía
+-Semana 7: Gaston
 
--Semana 8: Franco
+-Semana 8: Sofía
 
--Semana 9: Yvet
+-Semana 9: Franco
 
--Semana 10: Gaston
+-Semana 10: Yvet
 
--Semana 11: Sofía
+-Semana 11: Gaston
 
--Semana 12: Franco
+-Semana 12: Sofía
+
+
 
