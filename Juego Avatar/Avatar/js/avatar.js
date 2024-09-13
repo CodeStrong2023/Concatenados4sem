@@ -7,21 +7,26 @@ let ataqueEnemigo = null;
 let resultado = null;
 
 const body = document.querySelector('body');
-const spanVidasJugador = document.getElementById('vida-jugador');
-const spanVidasEnemigo = document.getElementById('vida-enemigo');
-const mostrarBtnAtaque = document.getElementById('btn-atq'); 
-const mostrarReiniciar = document.getElementById('reiniciar');
 const mostrarBtnComenzar = document.getElementById('boton-comenzar');
-const textoSeleccionar = document.getElementById('pj-select');
-const textoReglas = document.getElementById('texto-reglas');
-const seccionReglas = document.getElementById('reglas');
-const mostrarAtaque = document.getElementById('seleccionar-ataque'); 
-const mostrarMensaje = document.getElementById('mensajes'); 
-const mostrarSeleccion = document.getElementById('seleccionar-personaje');
-const sectionMensaje = document.getElementById('mensajes');
+
 const mostrarBtnReglas = document.getElementById('boton-reglas');
 const mostrarReglas = document.getElementById('reglas');
+const textoReglas = document.getElementById('texto-reglas');
+
+const textoSeleccionar = document.getElementById('pj-select');
+const mostrarSeleccion = document.getElementById('seleccionar-personaje');
 const botonPersonajeJugador = document.getElementById('boton-personaje');
+
+const spanVidasJugador = document.getElementById('vida-jugador');
+const spanVidasEnemigo = document.getElementById('vida-enemigo');
+const mostrarBtnAtaque = document.getElementById('btn-atq');
+const mostrarAtaque = document.getElementById('seleccionar-ataque');
+const spanPersonajeJugador = document.getElementById("personaje-jugador");
+const spanPersonajeEnemigo = document.getElementById("personaje-enemigo");
+const mostrarMensaje = document.getElementById('mensajes'); 
+
+const mostrarReiniciar = document.getElementById('reiniciar');
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -60,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 const crearPetalos = () => {
+
     let petalo = document.createElement('i');
     let x = innerWidth * Math.random();
     let size = (Math.random() * 8) + 1; 
@@ -100,7 +106,7 @@ function iniciarJuego(){
 }
 
 function seleccionarPersonajeJugador() {
-    let spanPersonajeJugador = document.getElementById("personaje-jugador");
+    
     
     // Verificar qué personaje está seleccionado
     document.querySelectorAll('input[name="personaje"]').forEach(personaje => {
@@ -123,8 +129,7 @@ function seleccionarPersonajeJugador() {
 
 function seleccionarPersonajeEnemigo(){
     let numero_aleatorio = numeroRandom(1, 4); 
-    let spanPersonajeEnemigo = document.getElementById("personaje-enemigo");
-
+    
     switch (numero_aleatorio) {
     case 1:
         spanPersonajeEnemigo.innerHTML = 'Aang';
@@ -147,7 +152,7 @@ function seleccionarPersonajeEnemigo(){
 
 function mostrarJuego() {
     
-    // Asegúrate de que ambos elementos existen y se muestran correctamente
+    
     if (mostrarAtaque && mostrarMensaje) {
         mostrarAtaque.style.display = 'block';
         mostrarMensaje.style.display = 'block';
@@ -194,6 +199,8 @@ function ataqueAleatorioEnemigo() {
     finJuego();
 }
 
+
+
 function mostrarResultado(){
     if (ataqueJugador == ataqueEnemigo){
         resultado = 'Empate';
@@ -217,10 +224,9 @@ function mostrarResultado(){
 function finJuego(){
     if (vidasJugador === 0 || vidasEnemigo === 0){
         let mensaje = vidasJugador === 0 ? `El personaje del enemigo ${personajeEnemigo} ha ganado! 😵` : `Su personaje ${personajeSeleccionado} ha ganado! 🎉`;
-        let sectionMensaje = document.getElementById('mensajes');
         let parrafo = document.createElement('p');
         parrafo.innerHTML = mensaje;
-        sectionMensaje.appendChild(parrafo);
+        mostrarMensaje.appendChild(parrafo);
         deshabilitarBotonesAtaque();
         mostrarBtnAtaque.style.display = 'none';
         mostrarReiniciar.style.display = 'block';
@@ -243,7 +249,7 @@ function crearMensaje(){
     
     let parrafo = document.createElement('p');
     parrafo.innerHTML= `Tu personaje ${personajeSeleccionado} atacó con ${ataqueJugador}, el personaje enemigo ${personajeEnemigo} atacó con ${ataqueEnemigo}, el resultado es: ${resultado}`;
-    sectionMensaje.appendChild(parrafo);
+    mostrarMensaje.appendChild(parrafo);
     scrollToBottom();
 }
 
@@ -270,21 +276,19 @@ function reiniciarJuego() {
     spanVidasEnemigo.innerHTML = vidasEnemigo.toString();
     document.getElementById('personaje-jugador').innerHTML = '';
     document.getElementById('personaje-enemigo').innerHTML = '';
-    document.getElementById('mensajes').innerHTML = '';
+    mostrarMensaje.innerHTML = '';
     
     // Mostrar botones de comenzar y reglas
 
     mostrarBtnComenzar.style.display = 'inline-flex';
-    textoReglas.style.display = 'block';
+    textoReglas.style.display = 'none';
     mostrarSeleccion.style.display = 'block'; // Mostrar la selección de personajes
     mostrarMensaje.style.display = 'none';
-    document.getElementById('seleccionar-ataque').style.display = 'none';
     mostrarBtnAtaque.style.dysplay = 'inline-flex';
     mostrarAtaque.style.display = 'none';
     mostrarReiniciar.style.display = 'none';
-    textoReglas.style.display = 'none';
     textoSeleccionar.style.display = 'none';
-    seccionReglas.style.display = 'block';
+    mostrarReglas.style.display = 'block';
 }
 
 
