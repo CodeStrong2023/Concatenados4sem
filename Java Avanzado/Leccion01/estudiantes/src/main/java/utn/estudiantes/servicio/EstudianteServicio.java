@@ -17,21 +17,23 @@ public class EstudianteServicio implements IEstudianteServicio {
     @Autowired
     private EstudianteRepositorio estudianteRepositorio;
 
+    public EstudianteServicio(EstudianteRepositorio estudianteRepositorio) {
+        this.estudianteRepositorio = estudianteRepositorio;
+    }
+
     // Implementación básica de los métodos heredados de la interface
 
     // Método para listar estudiantes y devolver la lista
     @Override
     public List<Estudiantes2024> listarEstudiantes() {
-        List<Estudiantes2024> estudiantes = estudianteRepositorio.findAll();
-        return estudiantes;
+        return estudianteRepositorio.findAll();
     }
 
     // Método para buscar un estudiante por id
     @Override
     public Estudiantes2024 buscarEstudiantePorId(Integer idestudiantes2024) {
         // Con findById() se regresa el estudiante si hay concordancia o null si no se encontro nada
-        Estudiantes2024 estudiante = estudianteRepositorio.findById(idestudiantes2024).orElse(null);
-        return estudiante;
+        return estudianteRepositorio.findById(idestudiantes2024).orElse(null);
     }
 
     // Método para guardar estudiante
