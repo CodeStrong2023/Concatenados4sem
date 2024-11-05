@@ -1,3 +1,5 @@
+# Modificaciones
+
 # dar formato a un string
 
 nombre = 'Ariel'
