@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <title>Gaming Store</title>
+    <link rel="icon" href="./media/logo.png">
+</head>
+<body>
+    <!--navBar-->
+    <div class="nav-container">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="/media/logo.png" alt="">
+                <p>GamingStore</p>
+            </div>
+
+            <div class="categorias-container">
+                <p>  PS5  |  PS4  |  XBOX  |  SWICTH  |  PC</p>
+            </div>
+
+            <div class="login-register">
+                <span class="user-name" id="user-name"></span>
+                <button id="logout-btn"> ➡️Logout </button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="separador-header">
+        <p>6 CUOTAS SIN INTERES EN TODA NUESTRA TIENDA</p>
+    </div>
+    <!--banner-->
+    <div class="banner">
+        <div class="banner-container">
+            <h1>GamingStore</h1>
+            <p>Tu tienda de juegos</p>
+        </div>
+    </div>
+    <div class="form-preview-container">
+        <div class="form-container">
+            <div class="caja-p__form">
+                <p>Nuevo Producto</p>
+            </div>
+            <form id="productForm" class="productForm">
+                
+                <div class="product-register">
+                    <input type="text" id="productName" name="name" placeholder="Nombre del producto" required>
+                    <input type="number" id="productPrice" name="price" placeholder="Precio" required>
+                    <input type="number" id="productQuantity" name="quanty" placeholder="Cantidad" required>
+                    <input type="text" id="productImage" name="img" placeholder="Ej: /media/cyberpunk.jpg" required>
+                </div>
+                
+                <button type="submit">Crear Producto</button>
+            </form>
+        </div>
+    
+         <!--shop content-->
+        <div class="card-products-container">
+            <div class="card-products" id="shopContent"></div>
+        </div>
+        <!--modal-->
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-container" id="modal-container"></div>
+    </div>
+
+    <script src="/js/tokenUsuario.js"></script>
+    <script src="/js/cart-preview.js"></script>
+    <script>
+         // Recupera el nombre de usuario desde sessionStorage
+         const username = sessionStorage.getItem('username');
+         document.getElementById('user-name').textContent = username;
+
+         document.getElementById('productForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+          
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+            console.log(data);
+
+            try {
+                const response = await fetch('/products', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+                });
+
+                // Manejo de respuesta
+                if (!response.ok) throw new Error(`Error HTTP! status: ${response.status}`);
+                const result = await response.json();
+                alert(result.message);  // Mostrar el mensaje de éxito o error
+            } catch (error) {
+                console.error("Error al enviar los datos:", error);
+                alert("Hubo un problema al enviar el formulario. Verifica los datos e intenta de nuevo.");
+            } 
+        });
+
+    </script>
+</body>
+<footer>
+    <div class="footer-container">
+        <p>Concatenados® Todos los derechos reservados. 2024</p>
+    </div>
+</footer>
+</html>
+
