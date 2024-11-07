@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <title>Gaming Store</title>
+    <link rel="icon" href="./media/logo.png">
+</head>
+<body>
+    <!--navBar-->
+    <div class="nav-container">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="/media/logo.png" alt="">
+                <p>GamingStore</p>
+            </div>
+
+            <div class="categorias-container">
+                <p>  PS5  |  PS4  |  XBOX  |  SWICTH  |  PC</p>
+            </div>
+
+            <div class="login-register">
+                <span class="user-name" id="user-name"></span>
+                <button id="logout-btn"> ➡️Logout </button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="separador-header">
+        <p>6 CUOTAS SIN INTERES EN TODA NUESTRA TIENDA</p>
+    </div>
+    <!--banner-->
+    <div class="banner">
+        <div class="banner-container">
+            <h1>GamingStore</h1>
+            <p>Tu tienda de juegos</p>
+        </div>
+    </div>
+
+    <!--shop content-->
+    <div class="card-products-container">
+        <div class="card-products" id="shopContent"></div>
+    </div>
+    <!--cart btn-->
+    <div class="cart-btn" id="cart-btn">🛒</div>
+     <!--cart counter-->
+     <span class="cart-counter" id="cart-counter">0</span>
+    <!--modal-->
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-container" id="modal-container"></div>
+
+    
+    <script src="/js/index.js"></script>
+    <script src="/js/cart.js"></script>
+    <script src="/js/tokenUsuario.js"></script>
+    <script>
+         // Recupera el nombre de usuario desde sessionStorage
+         const username = sessionStorage.getItem('username');
+         document.getElementById('user-name').textContent = username;
+    </script>
+</body>
+<footer>
+    <div class="footer-container">
+        <p>Concatenados® Todos los derechos reservados. 2024</p>
+    </div>
+</footer>
+</html>
+
