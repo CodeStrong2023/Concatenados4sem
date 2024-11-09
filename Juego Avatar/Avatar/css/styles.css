@@ -1,0 +1,453 @@
+/* Estilos generales */
+
+html {
+    height: 100%;
+}
+
+body {
+    display: block;
+    text-align: center;
+    font-family: "Spectral", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: larger;
+    background-color: #1C3B54; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #F0EAD6; 
+    overflow: hidden;
+}
+
+section {
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 1000px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 50;
+}
+
+#contenedor {
+    max-height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    
+    background-color: #31708E; 
+    color: #FFF; 
+    border: 3px solid #ffffff;
+    width: auto;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 3px;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 7px 18px;
+    transition: 1s ease;
+    z-index: 50;
+    padding: 10px;
+    
+}
+
+button:hover {
+    transition:all;
+    transition-duration: 1s;
+    background-color: #A23B3B;
+}
+
+label {
+    padding: 20px;
+    border-radius: 3px;
+}
+
+h2 {
+    color: #F0EAD6;
+    margin: 10px
+}
+
+i {
+    position: absolute;
+    background: #e6b8db;
+    border-radius: 50%;
+    box-shadow: inset 0 -1px 1px rgb(114, 114, 114);
+    filter: blur(2px);
+    top: -10px;
+    animation: petalos linear infinite;
+}
+
+@keyframes petalos {
+    0% {
+        top: -10px;
+    }
+    100% {
+        top: calc(100vh + 50px);
+    }
+}
+
+/* Título*/
+#title-overlay {
+    height: 130px;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+#title-overlay img {
+    position: relative;
+}
+
+/* Botón Comenzar*/
+#seleccionar-personaje {
+    text-align: center;
+}
+/* Reglas*/
+
+.reglas-contenedor {
+    max-height: 40vh; /* Establece una altura fija para el contenedor */
+    overflow-y: auto; /* Activa el scroll vertical */
+    padding: 5px;
+    border: 3px solid #18395f; /* Borde opcional para visibilidad */
+    background-color: rgb(39, 76, 119, 0.5); /* Color de fondo opcional */
+}
+
+.texto-reglas {
+    padding: 20px;
+}
+
+.texto-reglas p {
+    text-align: center;
+}
+
+/* Personaliza la barra de scroll */
+.reglas-contenedor::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de scroll */
+}
+
+/* Personaliza la pista de la barra de scroll (el fondo) */
+.reglas-contenedor::-webkit-scrollbar-track {
+    background: #417dc2; /* Color de fondo de la pista */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Personaliza el "dedo" o "thumb" (la parte que se arrastra) */
+.reglas-contenedor::-webkit-scrollbar-thumb {
+    background: #142c49; /* Color del thumb */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Personaliza el thumb cuando está en hover (cuando el mouse pasa por encima) */
+.reglas-contenedor::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del thumb cuando está en hover */
+}
+
+/* Opcional: Personaliza las esquinas de la barra de scroll */
+.reglas-contenedor::-webkit-scrollbar-corner {
+    background: #f1f1f1; /* Color de las esquinas, donde se cruzan las barras de scroll */
+}
+
+.mensajes::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de scroll */
+}
+
+/* Personaliza la pista de la barra de scroll (el fondo) */
+.mensajes::-webkit-scrollbar-track {
+    background: #417dc2; /* Color de fondo de la pista */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Personaliza el "dedo" o "thumb" (la parte que se arrastra) */
+.mensajes::-webkit-scrollbar-thumb {
+    background: #142c49; /* Color del thumb */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Personaliza el thumb cuando está en hover (cuando el mouse pasa por encima) */
+.mensajes::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del thumb cuando está en hover */
+}
+
+/* Opcional: Personaliza las esquinas de la barra de scroll */
+.mensajes::-webkit-scrollbar-corner {
+    background: #f1f1f1; /* Color de las esquinas, donde se cruzan las barras de scroll */
+}
+
+/*Elección de pj*/
+#pj-select {
+    display: block;
+}
+
+#pj-container {
+    display: inline-flex;
+    justify-items: center; /* Centra las imágenes horizontalmente */
+}
+
+#pj-container img {
+    max-width: 100px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: 1s ease;
+}
+
+#pj-container label {
+    padding: 20px;
+    border-radius: 3px;
+    border: 3px solid transparent; /* Borde inicial transparente */
+    transition: .5s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#pj-container label:hover {
+    cursor: pointer;
+    opacity: 1;
+    filter: contrast(110%);
+    transition: all;
+    transition-duration: 1s;
+}
+
+#Zuko:hover {
+    transition: all;
+    transition-duration: 1s;
+    background-color: #9D2A25;
+}
+
+
+
+#Katara:hover {
+    transition: all;
+    transition-duration: 1s;
+    background-color: #4A6BAF;
+}
+
+#Aang:hover {
+    transition: all;
+    transition-duration: 1s;
+    background-color: #f3ad22;
+}
+
+#Zokka:hover {
+    transition: all;
+    transition-duration: 1s;
+    background-color: #8787a0;
+}
+
+#Toph:hover {
+    transition: all;
+    transition-duration: 1s;
+    background-color: #266E30;
+}
+
+
+
+label p {
+    font-size: 25px;
+    margin: 0;
+}
+
+
+input[type="radio"] {
+   display: none;
+}
+
+
+
+#boton-personaje {
+    grid-column: span 2; /* El botón ocupará todo el ancho de ambas columnas */
+    margin-top: 20px;
+}
+
+/* Juego */
+
+.btn-atq {
+    margin: 10px;
+}
+
+#boton-reiniciar {
+    background-color: #A23B3B; 
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/*Footer*/
+
+footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer p {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Estilos responsivos */
+
+
+
+@media(min-width:1200px){
+    
+     /* Aquí puedes ajustar márgenes, tamaños de fuente, etc. */
+     body {
+        font-size: larger;
+        
+    }
+    
+    
+
+    section {
+        max-width: 1200px; /* Ampliar el contenedor principal */
+    }
+    
+}
+
+@media(max-width:1199px) and (min-width: 992px){
+    
+    body {
+        font-size: large;
+        background-repeat:repeat-y;
+        background-size:auto;
+    }
+    
+    #pj-container img {
+        width: 90px; /* Reducir un poco el tamaño de las imágenes */
+    }
+
+    section {
+        max-width: 900px; /* Ajustar el ancho máximo */
+        padding: 10px;
+    }
+    
+    footer p {
+        font-size: 14px; /* Ajustar el tamaño de fuente del footer */
+    }
+
+}
+
+@media(max-width:992px) {
+
+    body {
+        height: auto;
+        display: block;
+        font-size:larger;
+        background-clip:padding-box;
+        background-repeat:no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    button {
+        max-width: auto;
+    }
+    
+    #pj-container img {
+        width: 80px; /* Ajustar tamaño de imágenes */
+    }
+
+    section {
+        display: grid;
+        place-items: center;
+        max-width: 720px; /* Ajustar el ancho máximo */
+        padding: 8px;
+
+    }
+
+    footer {
+        height: 100px;
+    }
+    
+    footer p {
+        font-size: 20px;
+    }
+
+    #title-overlay {
+        width: auto;
+        height: auto;
+     }
+
+    #title-overlay img {
+       width: 100%;
+       height: auto;
+    }
+
+    
+    
+}
+
+@media(max-width: 700px) {
+
+    body {
+        height: auto;
+        display: block;
+        font-size:larger;
+        background-clip:padding-box;
+        background-repeat:no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    button {
+        max-width: auto;
+    }
+
+    .contenedor {
+        max-height: 100vh;
+    }
+
+    #pj-container {
+        display: block;
+        
+    }
+    
+    #pj-container img {
+        max-width: 40px; /* Ajustar tamaño de imágenes */
+    }
+
+    section {
+        display: grid;
+        place-items: center;
+        max-width: 720px; /* Ajustar el ancho máximo */
+        padding: 8px;
+
+    }
+
+    footer {
+        height: 100px;
+    }
+    
+    footer p {
+        font-size: 20px;
+    }
+
+    #title-overlay {
+        width: auto;
+        height: auto;
+     }
+
+    #title-overlay img {
+       width: 100%;
+       height: auto;
+    }
+
+}
+

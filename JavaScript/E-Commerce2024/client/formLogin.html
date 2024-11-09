@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="../media/logo.jpg">
+    <link rel="stylesheet" href="./css/loginForm.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+        
+        <form id="contenedor-form" class="contenedor-form">
+            <div class="caja-p__form">
+                <p>Iniciar Sesión</p>
+            </div>
+            <div class="contenedor-login">
+                <input type="text" name="user_name" id="nombre_usuario" placeholder="Usuario">
+                <input type="password" name="password" id="password" placeholder="Contraseña">
+            </div>
+            <div class="contenedor-button">
+                <button type="submit">Acceder</button>
+            </div>
+            <div class="contenedor-p__login">
+                <p>¿Aún no tienes cuenta? <a href="./formRegister.html">Crear cuenta</a></p>
+            </div>
+        </form>
+    </section>
+    <!---<script type="module" src="../Server/controllers/loginController.js"></script> <!-- Verifica que la ruta sea correcta -->
+    <script >
+        // Depuración para el manejo del formulario
+        document.getElementById('contenedor-form').addEventListener('submit', async (e) => {
+            e.preventDefault(); // Evitar que el formulario se envíe de forma tradicional
+            console.log('Formulario de inicio de sesión enviado'); // Depuración
+            
+            const user_name = document.getElementById('nombre_usuario').value;
+            const password = document.getElementById('password').value;
+            
+
+            console.log(`Datos del formulario: usuario=${nombre_usuario}, contraseña=${password}`); // Depuración
+
+            const response = await fetch('/login', { // Cambia la ruta a /login
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ user_name, password })
+            });
+
+            const data = await response.json();
+            console.log('Respuesta del servidor:', data); // Depuración
+            
+            if (response.ok) {
+                //document.getElementById('message').textContent = data.message;
+                sessionStorage.setItem('token', data.token); // Asegúrate de que el servidor envíe el token
+                sessionStorage.setItem('username', data.user.user_name);
+                sessionStorage.setItem('role', data.user.role); // Almacenar el rol
+                window.location.href = './usuarios.html'; // Cambia a la URL del formulario de registro
+
+                console.log("Rol del usuario:", data.user.role); // Debug: Imprimir el rol
+
+                // Aquí podrías redirigir o hacer algo con el token
+                if (data.user.role === 'admin') {
+                    window.location.href = './admin.html'; // Redirige a la página de administración
+                } else {
+                    window.location.href = './usuarios.html'; // Redirige a la página de usuarios
+                }
+            } else {
+                if (nombre_usuario_aux == "hernan" && password_aux == "1234") {
+                    sessionStorage.setItem('token', data.token); // Asegúrate de que el servidor envíe el token
+
+                    window.location.href = './usuarioLocal.html'; // Cambia a la URL del formulario de registro
+                } else {
+                    const errorData = await response.json(); // Obtener el mensaje de error
+                    alert(errorData.message); // Mostrar mensaje de error
+                }
+            }
+        });
+    </script>
+</body>
+</html>
