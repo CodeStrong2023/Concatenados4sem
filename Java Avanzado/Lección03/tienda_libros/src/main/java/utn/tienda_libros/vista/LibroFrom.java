@@ -84,25 +84,18 @@ public class LibroFrom extends JFrame {
     }
 
     private boolean validarCamposVacios() {
-        if (libroTexto.getText().isEmpty()) {
-            mostrarMensaje("Ingresa nombre del libro");
-            libroTexto.requestFocusInWindow();
-            return true;
-        }
-        if (autorTexto.getText().isEmpty()) {
-            mostrarMensaje("Ingresa nombre del Autor");
-            autorTexto.requestFocusInWindow();
-            return true;
-        }
-        if (precioTexto.getText().isEmpty()) {
-            mostrarMensaje("Ingresa precio del libro");
-            precioTexto.requestFocusInWindow();
-            return true;
-        }
-        if (existenciasTexto.getText().isEmpty()) {
-            mostrarMensaje("Ingresa existencias del libro");
-            existenciasTexto.requestFocusInWindow();
-            return true;
+        String[] campos = {libroTexto.getText(), autorTexto.getText(), precioTexto.getText(), existenciasTexto.getText()};
+        String[] mensajes = {
+            "Ingresa nombre del libro",
+            "Ingresa nombre del Autor",
+            "Ingresa precio del libro",
+            "Ingresa existencias del libro"
+        };
+        for (int i = 0; i < campos.length; i++) {
+            if (campos[i].isEmpty()) {
+                mostrarMensaje(mensajes[i]);
+                return true;
+            }
         }
         return false;
     }
@@ -125,34 +118,27 @@ public class LibroFrom extends JFrame {
     }
 
     private void modificarLibro() {
-        if (this.idTexto.equals("")){
+        if (idTexto.getText().isEmpty()) {
             mostrarMensaje("Debes seleccionar un registro en la tabla");
+            return;
         }
-        else {
-            // verificamos que nombre del libro no sea nulo
-            if(libroTexto.getText().equals("")){
-                mostrarMensaje("Debes seleccionar un registro en la tabla");
-            }
-            else {
-                // verificamos que nombre del libro no sea nulo
-                if (libroTexto.getText().equals("")){
-                    mostrarMensaje("Digite el nombre del libro...");
-                    libroTexto.requestFocusInWindow();
-                    return;
-                }
-                // Lllenamos el objeto libro a actualizar
-                int idLibro = Integer.parseInt(idTexto.getText());
-                var nombreLibro = libroTexto.getText();
-                var autor = autorTexto.getText();
-                var precio = Double.parseDouble(precioTexto.getText());
-                var existencias = Integer.parseInt(existenciasTexto.getText());
-                var libro = new Libro(idLibro, nombreLibro, autor, precio, existencias);
-                libroServicio.guardarLibro(libro);
-                mostrarMensaje("Se modificó el libro...");
-                limpiarFormulario();
-                listarLibros();
-            }
+        // Verificamos que nombre del libro no sea nulo
+        if (libroTexto.getText().isEmpty()) {
+            mostrarMensaje("Digite el nombre del libro...");
+            libroTexto.requestFocusInWindow();
+            return;
         }
+        // Llenamos el objeto libro a actualizar
+        int idLibro = Integer.parseInt(idTexto.getText());
+        var nombreLibro = libroTexto.getText();
+        var autor = autorTexto.getText();
+        var precio = Double.parseDouble(precioTexto.getText());
+        var existencias = Integer.parseInt(existenciasTexto.getText());
+        var libro = new Libro(idLibro, nombreLibro, autor, precio, existencias);
+        libroServicio.guardarLibro(libro);
+        mostrarMensaje("Se modificó el libro...");
+        limpiarFormulario();
+        listarLibros();
     }
 
     private void eliminarLibro() {
