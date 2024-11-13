@@ -2,7 +2,6 @@
 SCREEN_WIDTH =1700
 SCREEN_HEIGHT = 1000
 
-
 # Ruta de assets
 ASSETS_PATH = '/assets'
 
