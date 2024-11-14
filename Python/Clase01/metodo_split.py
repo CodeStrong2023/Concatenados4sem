@@ -1,15 +1,12 @@
-'''
- El método split permite convertir una cadena en una lista
-'''
 
 # help(str.split)
 
-cursos = 'Java JavaScript Node Python Diseno'
-lista_cursos = cursos.split()
-print(f'Lista de cursos: {lista_cursos}')
-print(type(lista_cursos))
+cursos = 'Java JavaScript Node Python Diseño'
+listas_cursos = cursos.split()
+print(f'Lista de cursos: {listas_cursos}')
+print(type(listas_cursos))
 
 cursos_separados_coma = 'Java,Python,Node,JavaScript,Spring'
-lista_cursos = cursos_separados_coma.split(',', 2)
-print(f'Lista cursos: {lista_cursos}')
-print(len(lista_cursos))
+listas_cursos = cursos_separados_coma.split(',', 2)
+print(f'Lista de cursos: {listas_cursos}')
+print(len(listas_cursos))

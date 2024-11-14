@@ -1,3 +1,4 @@
+
 /* Aquí pondremos el código servidor */
 // Setup del backend
 import express from "express"; // Importamos el framework de servidor
@@ -29,6 +30,7 @@ app.use((err, req, res, next) => { // Con este manejador de errores,usando next 
     res.status(500).json({
         status: "error",
         message: err.message
+
     });
 });
 

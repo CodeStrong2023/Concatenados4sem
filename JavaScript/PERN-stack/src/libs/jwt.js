@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 
+
 // Se crea el token de acceso
 export const createAccessToken = (payload) => {
     return new Promise((resolve, reject) => { 
@@ -9,4 +10,5 @@ export const createAccessToken = (payload) => {
                 resolve(token);  
         });
      });
+
 };

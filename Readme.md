@@ -26,5 +26,7 @@
 
 -Semana 12: Sofía
 
+![Scrum](./Scrum.jpeg)
+
 
 

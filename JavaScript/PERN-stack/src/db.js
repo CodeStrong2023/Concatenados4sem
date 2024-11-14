@@ -1,3 +1,4 @@
+
 /* Aquí crearemos las consultas SQL y la conexión a la Base de datos */ 
 import pg from "pg";
 
@@ -11,5 +12,7 @@ export const pool = new pg.Pool({
 });
 
 pool.on("connect", () => {
+
     console.log("Conectado a la base de datos");
+
 });
