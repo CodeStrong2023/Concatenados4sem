@@ -186,7 +186,7 @@ public class LibroFrom extends JFrame {
         listarLibros();
     }
 
-    private void listarLibros() {
+    private void listarLibros(){
         // Limpiar la tabla
         tablaModeloLibros.setRowCount(0);
         // Obtener los libros de la base de datos
@@ -205,7 +205,7 @@ public class LibroFrom extends JFrame {
         });
     }
 
-    private void configurarLayout() {
+    private void configurarLayout(){
         panel = new JPanel();
         GroupLayout layout = new GroupLayout(panel);
         panel.setLayout(layout);
