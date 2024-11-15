@@ -16,3 +16,4 @@ class personaje:
     def lanzar_laser(self):
         laser = laser(self.shape.centerx, self.shape.top)
         self.lasers.append(laser)       
+        

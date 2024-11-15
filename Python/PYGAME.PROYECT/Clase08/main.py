@@ -23,7 +23,6 @@ def mostrar_pantalla_inicio(screen):
         pygame.display.flip()
         
         
-        
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -61,3 +60,4 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()            
+                
