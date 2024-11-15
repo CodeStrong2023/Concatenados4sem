@@ -20,7 +20,7 @@ import lombok.ToString;
 public class Estudiantes2024 { // Clase de entidad que representa una tabla de datos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Nuestra llave primaria es autoincrementable
-    private Integer idestudiantes2024;
+    private Integer idEstudiantes2024;
     private String nombre;
     private String apellido;
     private String telefono;
