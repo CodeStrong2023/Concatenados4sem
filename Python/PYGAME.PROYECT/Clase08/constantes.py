@@ -1,13 +1,12 @@
-# Dimensiones pantalla
-SCREEN_WIDTH =1700
+import os
+
+# Dimensiones de la pantalla
+SCREEN_WIDTH = 1700
 SCREEN_HEIGHT = 1000
 
-# Ruta de assets
-ASSETS_PATH = '/assets'
 
-# Ruta archivos
-IMPERIAL_MARCH_PATH = f'{ASSETS_PATH}/sounds/imperial_march.mp3'
+# Colores
+COLOR_LASER = (0, 0, 255)  # Azul
 
-START_IMAGE_PATH = f'{ASSETS_PATH}/images/inicio/start.png'
-ESTRELLA_PATH = f'{ASSETS_PATH}/images/inicio/estrella'
-FONDO1_PATH = f'{ASSETS_PATH}/images/fondo1.jpg'
+# Ruta a los assets_1
+ASSETS_PATH = os.path.join(os.path.dirname(__file__), 'assets_1')

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92c7c926-5445-40d0-89e4-fedfdd91ad03" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="92c7c926-5445-40d0-89e4-fedfdd91ad03" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +45,7 @@
     "Python.valores_infinitos.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Gaston",
-    "last_opened_file_path": "C:/Users/gasto/ProyectosPersonales/Concatenados4sem/Python/Clase01"
+    "last_opened_file_path": "C:/Users/gasto/ProyectosPersonales/Concatenados4sem/Python/PYGAME.PROYECT/Clase08"
   }
 }]]></component>
   <component name="RunManager" selected="Python.metodo_split">
