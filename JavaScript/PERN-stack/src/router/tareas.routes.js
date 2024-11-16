@@ -1,4 +1,3 @@
-
 /* Rutas para el usuario */
 
 import Router from "express-promise-router";

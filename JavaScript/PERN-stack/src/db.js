@@ -12,7 +12,5 @@ export const pool = new pg.Pool({
 });
 
 pool.on("connect", () => {
-
-    console.log("Conectado a la base de datos");
-
+    console.log("Conectando a la base de datos...");
 });

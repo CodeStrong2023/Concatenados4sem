@@ -1,4 +1,3 @@
-
 /* Aquí pondremos el código servidor */
 // Setup del backend
 import express from "express"; // Importamos el framework de servidor
@@ -21,16 +20,15 @@ app.use(cookieParser());
 app.use(express.json()); // Convierte los objetos que el servidor recibe a json (JavaScript)
 app.use(express.urlencoded({ extended: false})); // Para enviar formularios cortos (false)
 
-app.get("/", (req, res) => res.json({message: "Bienvenidos a mí proyecto"}));
-app.use('/api' ,tareasRoutes);
-app.use('/api' ,authRoutes);
+app.get("/", (req, res) => res.json({message: "Bienvenidos a mi proyecto"}));
+app.use('/api',tareasRoutes);
+app.use('/api',authRoutes);
 
 // Manejando errores
 app.use((err, req, res, next) => { // Con este manejador de errores,usando next al haber un error se enviara el siguiente json
     res.status(500).json({
-        status: "error",
-        message: err.message
-
+       status: "error",
+       message: err.message,
     });
 });
 

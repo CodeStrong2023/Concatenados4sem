@@ -7,13 +7,12 @@ import { signupSchema, signinSchema } from "../schemas/auth.schema.js";
 
 const router = Router();
 
-router.post("/signin",validateSchema(signinSchema), signin);
+router.post("/signin", signin);
 
-router.post("/signup",validateSchema(signupSchema) , signup);
+router.post("/signup", signup);
 
 router.post("/signout", signout);
 
 router.get("/profile",isAuth, profile);
-
 
 export default router;
