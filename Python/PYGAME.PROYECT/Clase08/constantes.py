@@ -4,6 +4,7 @@ import os
 SCREEN_WIDTH = 1700
 SCREEN_HEIGHT = 1000
 
+
 # Colores
 COLOR_LASER = (0, 0, 255)  # Azul
 

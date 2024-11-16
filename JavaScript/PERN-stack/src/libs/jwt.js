@@ -1,11 +1,14 @@
 import jwt from "jsonwebtoken";
 
-export const createAcessToken = (paylod) => {
-    return new Promise((resolve, reject) => {
-        jwt.sign(paylod, "xyz123", {expiresIn: "Id"},
-        (err, token) => {
-            if (err) reject (err);
-            resolve(token);
-    });
-    });
+
+// Se crea el token de acceso
+export const createAccessToken = (payload) => {
+    return new Promise((resolve, reject) => { 
+        jwt.sign(payload, "xyz123", { expiresIn: "1d" },
+            (err, token) => {
+                if (err) reject(err); 
+                resolve(token);  
+        });
+     });
+
 };
