@@ -17,7 +17,7 @@ public class TiendaLibrosApplication {
 				new SpringApplicationBuilder(TiendaLibrosApplication.class)
 						.headless(false) // Configuración headless
 						.web(WebApplicationType.NONE) // App Web
-						.run(args);
+						.run(args); // Aquí pasamos los argumentos recibidos por le método
 
 		// Ejecutamos el código para cargar el formulario
 		EventQueue.invokeLater(() -> { // Método Lambda
