@@ -1,6 +1,6 @@
-import axios from "axios";
 import { createContext, useContext, useState, useEffect } from "react";
 import Cookie from 'js-cookie';
+import axios from "../api/axios"
 
 export const AuthContext = createContext();
 
@@ -19,9 +19,7 @@ export function AuthProvider ({children}) {
 
     const signin = async (data) => {
        try {
-            const res = await axios.post("http://localhost:3000/api/signin", data, {
-                withCredentials: true,
-            });
+            const res = await axios.post("/signin", data);
             setUser(res.data);
             setIsAuth(true);
         return res.data;
@@ -36,9 +34,7 @@ export function AuthProvider ({children}) {
 
     const signup = async (data) => {
         try {
-            const res = await axios.post("http://localhost:3000/api/signup", data, {
-                withCredentials: true,
-            });
+            const res = await axios.post("/signup", data);
             setUser(res.data);
             setIsAuth(true);
             return res.data;
@@ -49,11 +45,27 @@ export function AuthProvider ({children}) {
             }
             setErrors([error.response.data.message]);
         }
+    };
+
+    const signout = async() => {
+        const res = await axios.post("/signout");
+        setUser(null);
+        setIsAuth(false);
+        return res.data;
     }
 
     // Lo usaremos para leer las cookies
     useEffect(() => {
-        console.log(Cookie.get('token'));
+        if (Cookie.get("token")){
+            axios.get("/profile").then((res) => {
+                setUser(res.data);
+                setIsAuth(true);
+            }).catch((error) => {
+                setUser(null);
+                setIsAuth(false);
+                console.log(error);
+            });
+        }
     }, []);
 
     return <AuthContext.Provider value={{
@@ -63,6 +75,7 @@ export function AuthProvider ({children}) {
         signup,
         setUser,
         signin,
+        signout,
     }}>
         {children}
     </AuthContext.Provider>
