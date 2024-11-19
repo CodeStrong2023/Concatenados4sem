@@ -1,5 +1,5 @@
 
-import {Button, Card, Input, Label} from '../components/ui'
+import {Button, Card, Container, Input, Label} from '../components/ui'
 import {useForm} from 'react-hook-form';
 import {Link, useNavigate} from 'react-router-dom';
 import {useAuth} from '../context/AuthContext';
@@ -10,6 +10,7 @@ function RegisterPage() {
 
   const {signup, errors: setUserErrors} = useAuth();
   const navigate = useNavigate();
+  
   const onSubmit = handleSubmit(async(data) => {
       const user = await signup(data);
       if (user) {
@@ -18,10 +19,12 @@ function RegisterPage() {
       
   }); 
 
+
   return (
-    <div className='h-[calc(100vh-64px)] flex items-center justify-center'>
+    <Container className='h-[calc(100vh-10rem)] flex items-center justify-center'>
       
       <Card>
+
         {
           // Si existe el error
           setUserErrors && setUserErrors.map((error) => (
@@ -29,6 +32,7 @@ function RegisterPage() {
             <p className="bg-red-500 text-white text-center p-2">{error}</p>
           )) 
         }
+
       <h3 className='text-4xl font-bold my-2'>Registro</h3>
         <form onSubmit={onSubmit}>
           <Label htmlFor="name">Nombre</Label>
@@ -60,7 +64,7 @@ function RegisterPage() {
           <Link to="/login" className="hover:text-sky-400">Iniciar Sesión</Link>
         </div>
       </Card>
-    </div>
+    </Container>
   )
 }
 
