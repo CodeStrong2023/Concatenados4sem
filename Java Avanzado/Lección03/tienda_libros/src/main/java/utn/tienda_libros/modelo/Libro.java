@@ -17,10 +17,11 @@ import lombok.ToString;
 @ToString
 public class Libro {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Las anotaciones no llevan ;
     Integer idLibro;
     String nombreLibro;
     String autor;
     Double precio;
     Integer existencias;
+
 }
