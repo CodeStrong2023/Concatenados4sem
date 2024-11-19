@@ -1,13 +1,11 @@
 {
   "name": "pern-stack",
   "version": "1.0.0",
-
   "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js",
     "start": "node src/index.js"
-
   },
   "keywords": [],
   "author": "",
@@ -22,12 +20,17 @@
     "jsonwebtoken": "^9.0.2",
     "md5": "^2.3.0",
     "morgan": "^1.10.0",
-
     "pg": "^8.13.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "eslint": "^9.12.0",
+    "eslint": "^9.15.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
     "nodemon": "^3.1.7"
   }
 }
