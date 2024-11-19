@@ -25,9 +25,10 @@ async function  hablar(nombre){
 async function adios(nombre) {
     return new Promise((resolve, reject) => { 
         setTimeout(function() {
+            //validamos el error o aprobacion
             console.log('Adios ' + nombre);
-            resolve(nombre);
-            //reject('Hay un error');
+            //if(err) reject('Hay un error');
+            resolve();
         }, 1000);
     });
 }
@@ -46,5 +47,3 @@ async function main() {
 console.log('Empezamos el proceso');
 main();
 console.log('Esta va a ser la segunda instrucción');
-
- 
