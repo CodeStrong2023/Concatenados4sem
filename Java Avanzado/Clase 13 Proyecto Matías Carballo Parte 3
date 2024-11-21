@@ -1,0 +1,16 @@
+Clase 13 Proyecto Matías Carballo Parte 3
+
+Lo que se vio en la clase 13 es un proyecto que desarrollo Matias Carballo en el cual se administran las tareas a realizar por un usuario creando las tareas, eliminandolas, mostrandolas en pantalla y actualizando sus estados.
+Fue desarrollado con un backend, con java, spring boot, librerias de swagger,  haciendo pruebas con postmand. En el frontend se utilizo html, css y java script.
+
+Hoy terminamos este proyecto, pero también llegamos al final de la tecnicatura, hagamos juntos esta clase de la mano de Matías Carballo.
+
+13.1 Explicación del HTML y CSS
+13.2 Aclaración de error en CloudFlare y SweetAlert
+13.3 Explicación del path y el sendTask
+13.4 Explicación del getTask, el checkTask y deleteTask
+13.5 Explicación del checkComplete
+13.6 Explicación dateElement y deletelco
+13.7 Explicación addTask
+13.8 Explicación de displayTasks
+13.9 Explicación date, script.js y muestra final del proyecto
